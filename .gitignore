@@ -1,0 +1,14 @@
+.DS_Store
+*.pyc
+*.pyo
+*.log
+env
+env*
+dist
+build
+*.egg
+*.egg-info
+_mailinglist
+.tox
+.cache/
+.idea/
