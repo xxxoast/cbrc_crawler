@@ -30,9 +30,9 @@ def find_public_page(url,update_date = None):
         page_length = int(page_length_tag['href'].split('=')[-1]) 
         page_format = '/'.join((format_base,page_length_tag['href'].split('=')[0].split('/')[-1]))
         all_pages = [ '='.join((page_format,str(i))) for i in range(1,page_length+1)]
+        print 'page_length = ',page_length
     else:
         all_pages = [url,]
-    print page_length
     punish_pages,punish_urls,punish_dates = [],[],[]
     for ipage in all_pages:
         punish_url = get_js_html(ipage)

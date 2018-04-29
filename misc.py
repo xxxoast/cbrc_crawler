@@ -17,3 +17,13 @@ def dates_trans(x):
         return 10000 * int(year) + 100 * int(month) + int(day)
     except:
         return None 
+    
+empty = re.compile(ur'[\s\xa0]*')
+public_table_kw = re.compile(ur'行政处罚依据')
+
+def is_table_td(tag):
+    if tag.name == 'td':
+        text = empty.sub('',tag.text)
+        reobj = public_table_kw.search(text)
+        return True if reobj else False
+    return False
