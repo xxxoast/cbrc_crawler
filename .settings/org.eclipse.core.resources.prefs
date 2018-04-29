@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
 encoding/__init__.py=utf-8
+encoding/chinese2digits.py=utf-8
 encoding/db_api.py=utf-8
 encoding/get_dynamic_html.py=utf-8
 encoding/get_punishment_details.py=utf-8

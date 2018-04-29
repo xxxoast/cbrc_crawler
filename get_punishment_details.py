@@ -42,7 +42,7 @@ def create_punishment_files(dbapi,city,des_path):
         table_tag = None
         table_td_tag = soup.find(is_table_td)
         if table_td_tag:
-            table_tag = table_td_tag.find_parents('table')
+            table_tag = table_td_tag.find_parent('table')
         if table_tag is None:
             print '[Warning] Invalid Page = ',record.punishment_item_url
             continue

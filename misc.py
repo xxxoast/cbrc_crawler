@@ -9,17 +9,23 @@ def valid_city(city,include,exclude):
         return True if city not in exclude else False
     return True
 
+empty = re.compile(ur'[\s\xa0]*')
+public_table_kw = re.compile(ur'^行政处罚依据')
 date_kw = re.compile(ur'[\u4e00-\u9fa5/\\.-]')
+
 def dates_trans(x):
     x = date_kw.sub('',x)
+    x = empty.sub('',x)
+    print x
     try:
-        year,month,day = int(x[:4]),int(x[4:-2]),int(x[-2:])
+        if len(x) > 6:
+            year,month,day = int(x[:4]),int(x[4:-2]),int(x[-2:])
+        else:
+            year,month,day = int(x[:4]),int(x[4:-1]),int(x[-1:])
         return 10000 * int(year) + 100 * int(month) + int(day)
     except:
         return None 
     
-empty = re.compile(ur'[\s\xa0]*')
-public_table_kw = re.compile(ur'行政处罚依据')
 
 def is_table_td(tag):
     if tag.name == 'td':
