@@ -103,7 +103,6 @@ def parse_html(infile,dbapi,ss):
         df.loc[replaced_rows,1] = df.loc[replaced_rows,df.columns[-1]]
         df.drop(df.columns[-1],axis = 1,inplace = True)
     df.fillna('',inplace = True)
-    print df.head()
     pubnumber = df.iloc[0,1]
     violatype,reason,punish_content,whodid,update_date = df.iloc[-5:,1]
     punish_who = [None,None,None]
@@ -136,5 +135,6 @@ def update():
     dumpdb()
     
 if __name__ == '__main__':
+    print '--->>> start text analysis'
     update()
     

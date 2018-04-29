@@ -79,6 +79,7 @@ def crawler(include = [],exclude = []):
     return new_items
             
 if __name__ == '__main__':
+    print '--->>> start get punishment urls'
     crawler()
 #     find_public_page(r'http://www.cbrc.gov.cn/zhuanti/xzcf/get2and3LevelXZCFDocListDividePage/jiangsu/1.html',update_date = None)
     print 'done'

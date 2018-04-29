@@ -69,5 +69,6 @@ def get_punish_table():
         create_punishment_files(dbapi,city,des_path)
   
 if __name__ == '__main__':
+    print '--->>> start get punishment details'
     get_punish_table()
     
